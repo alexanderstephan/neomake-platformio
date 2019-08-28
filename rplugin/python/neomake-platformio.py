@@ -33,8 +33,8 @@ class Main(object):
         ])
         json_lines = []
 
-        for line in lines:
-            if found_start and brace_count == 0:
+        for line in lines.decode('UTF-8').splitlines():
+        if found_start and brace_count == 0:
                 break
             if not found_start and line.startswith('{'):
                 found_start = True
